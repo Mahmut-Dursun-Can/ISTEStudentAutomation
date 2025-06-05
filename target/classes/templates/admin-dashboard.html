@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yönetici Paneli</title>
+  <link rel="stylesheet" type="text/css" href="css/admin.css">
+
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="/admin-dashboard">
+      <img th:src="@{/logo.png}" alt="Logo">
+    </a>
+  </div>
+  <h1>Yönetici Paneli</h1>
+</header>
+
+<nav>
+  <a onclick="showContent('appointments')">Randevu</a>
+  <a onclick="showContent('ratings')">Değerlendirme</a>
+  <a onclick="showContent('qr')">QR Kod</a>
+</nav>
+
+
+
+<!-- Randevu Listesi -->
+<div id="appointments" class="content">
+  <h2>Randevu Sayıları</h2>
+
+  <!-- Saat dilimlerine göre randevu sayılarının listelendiği alan -->
+  <div id="appointmentsCount" class="appointments-container">
+    <p>Yükleniyor...</p>
+  </div>
+
+  <!-- Kullanıcı Listesi ve Randevu Saatleri -->
+  <div>
+    <h3>Kullanıcılar ve Randevu Saatleri</h3>
+    <table>
+      <thead>
+      <tr>
+        <th>Öğrenci Adı</th>
+        <th>Randevu Saati</th>
+      </tr>
+      </thead>
+      <tbody th:each="appointment : ${appointments}">
+      <tr>
+        <td th:text="${appointment.username}"></td>
+        <td th:text="${appointment.appointmentTime}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Değerlendirme -->
+<div id="ratings" class="content hidden">
+  <h2>Yemek Değerlendirmeleri</h2>
+  <table>
+    <thead>
+    <tr><th>Öğrenci Adı</th><th>Yıldız</th><th>Yorum</th></tr>
+    </thead>
+    <tbody th:each="comment : ${comments}">
+    <tr>
+      <td th:text="${comment.username}"></td>
+      <td th:text="${comment.stars}"></td>
+      <td th:text="${comment.content}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- QR KOD -->
+<div id="qr" class="content hidden">
+  <div id="status" class="status-message hidden"></div>
+  <h2>QR Kod Tarayıcı</h2>
+  <div class="qr-wrapper">
+    <button class="startbtn" onclick="startScanner()">QR Kod Oku</button>
+    <div id="reader"></div>
+    <button class="stopbtn" onclick="stopScanner()">QR Okumayı Durdur</button>
+  </div>
+</div>
+
+<footer>
+
+  <p>&copy;2025 İSTE Yemekhane Randevu Sistemi    <span style="margin-left: 30px;"></span>
+    Logo: <a href="https://commons.wikimedia.org/wiki/File:Iste_logo.png" target="_blank" style="color: #007bff;"> İSTE Logo</a></p>
+</footer>
+
+
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+<script src="js/qr-admin.js"></script>
+<script th:inline="javascript">
+  window.onload = function() {
+   let appointments = /*[[${appointments}]]*/ [];
+
+   console.log(appointments); // Kontrol için
+
+   let appointmentTimes = appointments.map(appointment => appointment.appointmentTime.substring(0, 5));
+   console.log(appointmentTimes);
+
+   let appointmentCount = countAppointmentsByHour(appointmentTimes);
+   displayAppointmentCount(appointmentCount);
+ };
+
+ function countAppointmentsByHour(appointments) {
+   const counts = {
+     '11:30': 0, '11:45': 0, '12:00': 0, '12:15': 0, '12:30': 0, '12:45': 0,
+     '13:00': 0, '13:15': 0, '13:30': 0, '13:45': 0, '14:00': 0, '14:15': 0,
+     '14:30': 0, '14:45': 0
+   };
+
+   appointments.forEach(time => {
+     if (counts.hasOwnProperty(time)) {
+       counts[time]++;
+     }
+   });
+
+   return counts;
+ }
+
+ function displayAppointmentCount(counts) {
+   let countText = '<strong>Randevu Saatlerine Göre Dağılım:</strong><br>';
+   for (let time in counts) {
+     let endTime = addMinutesToTime(time, 15); // 15 dakikalık aralık
+     countText += `${time} - ${endTime} : ${counts[time]} randevu<br>`;
+   }
+   document.getElementById('appointmentsCount').innerHTML = countText;
+ }
+
+ function addMinutesToTime(time, minutesToAdd) {
+   let [hour, minute] = time.split(':').map(Number);
+   minute += minutesToAdd;
+   if (minute >= 60) {
+     minute -= 60;
+     hour += 1;
+   }
+   return `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+ }
+
+</script>
+
+
+
+
+</body>
+</html>

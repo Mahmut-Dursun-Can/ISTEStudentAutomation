@@ -1,0 +1,415 @@
+/* General Body Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+  background-color: #f4f6f9; /* Light, clean background */
+  margin: 0;
+  padding: 0;
+  color: #333; /* Default text color */
+  line-height: 1.6; /* Improved readability */
+}
+
+/* Header Styles */
+header {
+  background-color: #2c3e50; /* Dark blue-gray for header */
+  color: #ecf0f1; /* Light text color for contrast */
+  padding: 15px 30px; /* Adjusted padding */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space out logo and title/nav */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+header .logo img {
+  height: 50px; /* Standard logo height */
+}
+
+header h1 {
+  flex-grow: 1; /* Allow title to take available space */
+  margin: 0;
+  text-align: center; /* Center the main title */
+  font-size: 24px; /* Clear and readable font size */
+  font-weight: 600; /* Slightly bolder title */
+}
+
+/* Navigation Bar Styles */
+nav {
+  background-color: #ecf0f1; /* Light gray for nav background */
+  padding: 10px 0; /* Vertical padding, horizontal handled by items */
+  display: flex;
+  justify-content: center; /* Center navigation links */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle shadow below nav */
+}
+
+nav a {
+  color: #2c3e50; /* Dark text for nav links */
+  text-decoration: none;
+  padding: 10px 20px; /* Comfortable padding for clickable area */
+  border-radius: 5px; /* Rounded corners for links */
+  margin: 0 8px; /* Spacing between nav items */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  font-weight: 500; /* Medium font weight */
+  cursor: pointer; /* Indicate clickable items */
+}
+
+nav a:hover, nav a.active {
+  background-color: #3498db; /* Blue highlight for hover/active state */
+  color: white; /* White text on highlight */
+}
+
+/* Content Area Styles */
+.content {
+  padding: 25px;
+  margin: 20px;
+  background-color: #ffffff; /* White background for content sections */
+  border-radius: 8px; /* Rounded corners for content cards */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08); /* Softer, more diffused shadow */
+}
+
+.content h2 {
+  color: #2c3e50; /* Dark blue-gray for section titles */
+  border-bottom: 2px solid #3498db; /* Blue underline for emphasis */
+  padding-bottom: 10px;
+  margin-top: 0; /* Remove default top margin */
+  margin-bottom: 25px;
+  font-size: 1.8em; /* Larger section titles */
+}
+
+.content h3 {
+  color: #333;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.4em; /* Slightly larger sub-headings */
+}
+
+.hidden {
+  display: none; /* Utility class to hide elements */
+}
+
+/* Updated Appointments Count Styling */
+#appointmentsCount {
+  background-color: #e9f5ff; /* Light blue background */
+  padding: 25px; /* Increased padding */
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border: 1px solid #b3d7ff; /* Light blue border */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Slightly enhanced shadow */
+}
+
+#appointmentsCount strong.title { /* Class for the main title "Randevu Saatlerine Göre Dağılım:" */
+  color: #0056b3; /* Darker blue for the heading */
+  font-size: 1.4em; /* Larger title for this section */
+  display: block;
+  margin-bottom: 20px; /* More space below title */
+  padding-bottom: 15px; /* More padding below title text */
+  border-bottom: 1px solid #cce0ff; /* Lighter separator line */
+  text-align: center; /* Center the title */
+}
+
+.appointment-slots-grid { /* Container for the grid layout */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid, wider items */
+  gap: 18px; /* Spacing between slots */
+}
+
+.appointment-slot {
+  background-color: #ffffff; /* White background for each slot */
+  padding: 15px; /* Increased padding within slot */
+  border-radius: 6px;
+  border: 1px solid #d0eaff; /* Lighter blue border */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06); /* Subtle shadow for each slot */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1em; /* Slightly larger font for slot text */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.appointment-slot:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Enhanced shadow on hover */
+}
+
+.appointment-slot .time {
+  font-weight: 600; /* Bold time */
+  color: #1a2533; /* Darker text for time */
+  flex-shrink: 0; /* Prevent time from shrinking */
+  margin-right: 10px; /* Space between time and count details */
+}
+
+.appointment-slot .details { /* Container for count and "randevu" text */
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+
+.appointment-slot .count {
+  background-color: #3498db; /* Blue background for count */
+  color: white;
+  padding: 5px 10px; /* More padding for count */
+  border-radius: 16px; /* Pill shape */
+  font-size: 0.9em;
+  font-weight: bold;
+  min-width: 22px; /* Ensure even small numbers have some background */
+  text-align: center;
+  margin-right: 5px; /* Space between count and "randevu" text */
+}
+
+.appointment-slot .count.zero { /* Special style for zero appointments */
+  background-color: #dce4ec; /* Lighter gray for zero count */
+  color: #6c7a89; /* Muted text color for zero */
+}
+
+.appointment-slot .appointment-text { /* For "randevu" text */
+    font-size: 0.9em;
+    color: #555;
+}
+
+#appointmentsCount p.loading-text, #appointmentsCount p.no-data-text { /* Style for the "Yükleniyor..." and "No data" text */
+    color: #555;
+    font-style: italic;
+    text-align: center;
+    padding: 25px;
+    font-size: 1.1em;
+}
+
+
+/* Table Styling */
+table {
+  width: 100%; /* Full width tables */
+  border-collapse: collapse; /* Clean look for borders */
+  margin: 25px 0; /* More vertical margin */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Standard shadow for depth */
+  background-color: #fff; /* White background for table */
+  border-radius: 8px; /* Rounded corners for the table itself */
+  overflow: hidden; /* Ensures box-shadow and border-radius apply correctly to children */
+}
+
+table th, table td {
+  padding: 15px; /* Generous padding for cells */
+  text-align: left; /* Align text to the left */
+  border-bottom: 1px solid #ddd; /* Light gray lines between rows */
+  vertical-align: middle;
+}
+
+table th {
+  background-color: #3498db; /* Blue background for table headers */
+  color: white; /* White text for headers */
+  font-weight: 600; /* Bolder header text */
+  font-size: 1.1em;
+}
+
+table tbody tr:last-child td {
+    border-bottom: none; /* Remove border from the last row for a cleaner look with rounded corners */
+}
+
+table tbody tr:hover {
+  background-color: #f2f2f2; /* Light gray highlight on row hover */
+}
+
+/* QR Code Section Styling */
+.qr-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* For potential absolute positioning of children if needed */
+  margin-top: 20px; /* Adjusted margin */
+  padding: 20px;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  background-color: #fdfdfd;
+}
+
+#reader {
+  width: 100%; /* Responsive width */
+  max-width: 350px; /* Max width for the QR reader */
+  height: 280px; /* Adjusted height */
+  background-color: #f0f0f0; /* Light placeholder background */
+  border: 2px dashed #ccc; /* Dashed border */
+  border-radius: 10px; /* Rounded corners */
+  margin: 15px 0; /* Vertical margin */
+}
+
+/* Button Styling (General and QR specific) */
+button, .startbtn, .stopbtn {
+  padding: 12px 25px; /* Uniform padding */
+  font-size: 16px;
+  font-weight: 500; /* Medium weight */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 5px; /* Margin around buttons */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  width: auto; /* Auto width based on content */
+  min-width: 180px; /* Minimum width for consistency */
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button:hover, .startbtn:hover, .stopbtn:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.startbtn {
+  background-color: #3498db; /* Blue for start/action buttons */
+  color: white;
+}
+
+.startbtn:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+
+.stopbtn {
+  background-color: #e74c3c; /* Red for stop/cancel buttons */
+  color: white;
+}
+
+.stopbtn:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
+
+/* Footer Styles */
+footer {
+  background-color: #2c3e50; /* Dark blue-gray, matching header */
+  color: #ecf0f1; /* Light text color */
+  text-align: center;
+  padding: 15px; /* Slightly more padding */
+  /* position: fixed; */ /* Commented out: fixed footer can overlap content. Use if specifically needed. */
+  /* bottom: 0; */
+  /* width: 100%; */
+  margin-top: 30px; /* Ensure space above footer if not fixed */
+  font-size: 0.9em;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #3498db; /* Blue for links in footer */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Status Message Styling */
+.status-message {
+  /* display: none; */ /* Initial state handled by JS or presence of class */
+  padding: 15px;
+  margin: 20px auto; /* Centered with auto horizontal margins */
+  max-width: 600px; /* Max width for readability */
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  transition: opacity 0.5s ease, transform 0.3s ease;
+  opacity: 0; /* Start hidden, control with .visible */
+  transform: translateY(-10px); /* Start slightly up */
+}
+
+.status-message.visible {
+  display: block; /* Or flex/grid if needed for content alignment */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Success message style */
+.status-message.text-green-600 { /* Using the class name from your example */
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+/* Error message style */
+.status-message.text-red-600 { /* Using the class name from your example */
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  header .logo img {
+    margin-bottom: 10px;
+  }
+
+  header h1 {
+    font-size: 20px; /* Slightly smaller title on mobile */
+  }
+
+  nav {
+    padding: 10px;
+    flex-direction: column; /* Stack nav links vertically */
+  }
+
+  nav a {
+    display: block; /* Make links take full width */
+    margin: 8px 0; /* Vertical margin for stacked links */
+    padding: 12px;
+  }
+
+  .content {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .content h2 {
+    font-size: 1.5em;
+  }
+  .content h3 {
+    font-size: 1.2em;
+  }
+
+  #appointmentsCount strong.title {
+    font-size: 1.2em; /* Adjust title size for mobile */
+  }
+
+  .appointment-slots-grid {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+    gap: 10px;
+  }
+
+  .appointment-slot {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+
+  table {
+    font-size: 14px; /* Smaller font for table content on mobile */
+  }
+  table th, table td {
+    padding: 10px; /* Reduced padding for table cells */
+  }
+
+  #reader {
+    max-width: 90%; /* More responsive QR reader width */
+    height: 250px; /* Adjust height for smaller screens */
+  }
+
+  button, .startbtn, .stopbtn {
+    width: 90%; /* Wider buttons on smaller screens */
+    max-width: 300px; /* Max width for buttons */
+    padding: 12px;
+    font-size: 15px;
+    margin: 8px auto; /* Center buttons */
+    display: block; /* Ensure they take up block space for centering */
+  }
+  .qr-wrapper button:last-child {
+    margin-bottom: 0;
+  }
+
+  footer {
+    font-size: 0.8em;
+    padding: 10px;
+  }
+}

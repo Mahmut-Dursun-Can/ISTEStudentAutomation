@@ -1,0 +1,79 @@
+
+/* Butonun temel stili */
+#olustur {
+    background-color: #4CAF50; /* Yeşil arka plan */
+    color: white; /* Beyaz metin */
+    border: none; /* Kenarlık yok */
+    padding: 10px 20px; /* İçerik etrafında boşluk */
+    text-align: center; /* Metni ortala */
+    text-decoration: none; /* Alt çizgi yok */
+    display: inline-block; /* Yan yana görünmesini sağlar */
+    font-size: 16px; /* Font büyüklüğü */
+    cursor: pointer; /* Fareyle üzerine gelindiğinde işaretçi değişir */
+    border-radius: 5px; /* Yuvarlatılmış köşeler */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+    transition: background-color 0.3s, transform 0.3s; /* Hover efekti */
+    width: auto; /* Butonun genişliği içeriğine göre otomatik ayarlanır */
+    margin: 0 auto; /* Butonu ortalamak için */
+    margin-top: 50px; /* Butonu biraz aşağıya kaydırır */
+}
+
+#olustur:hover {
+    background-color: #45a049; /* Hoverda daha koyu yeşil */
+    transform: translateY(-2px); /* Butonun yukarı kayması */
+}
+
+#olustur:active {
+    transform: translateY(0); /* Tıklanınca buton normal pozisyona döner */
+}
+
+/* Butonun bulunduğu bölüm için */
+.generate-btn {
+    font-family: 'Arial', sans-serif; /* Yazı fontu */
+}
+
+/* QR Panel */
+#qrPanel {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+}
+
+/* QR Görseli */
+#qrPanel img {
+    width: 250px; /* Minimum genişlik belirleyebilirsiniz */
+    height: auto;
+    border-radius: 8px;
+}
+
+/* QR Oluştur Butonu */
+.generate-btn {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Paneli Kapat Butonu */
+.close-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}

@@ -1,0 +1,106 @@
+table {
+    width: 80%;
+    max-width: 100%;
+    table-layout: fixed;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    box-sizing: border-box;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 4px;
+    text-align: left;
+    font-weight: bold;
+}
+
+td {
+    padding: 10px 4px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.encrypt-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.encrypt-button:hover {
+    background-color: #45a049;
+}
+
+.encrypt-button:focus {
+    outline: none;
+}
+
+.content table {
+    margin-top: 20px;
+}
+
+form {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 0 auto;
+    user-select: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.time-slot {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px;
+    background-color: #e2f7fa;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    width: 80px;
+    user-select: none;
+}
+
+.time-slot:hover {
+    background-color: #ddd;
+}
+
+.selected {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
