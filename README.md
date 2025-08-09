@@ -1,3 +1,7 @@
+
+<img width="1977" height="896" alt="bitirme" src="https://github.com/user-attachments/assets/bcc9336a-92b4-4309-b204-2721c7d8cc26" />
+
+
 # ISTE Student System - Dining Hall Management
 
 ## Abstract
