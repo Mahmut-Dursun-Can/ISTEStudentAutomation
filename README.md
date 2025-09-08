@@ -73,9 +73,3 @@ Logical relationships were established between the modules in the developed syst
 
 ***
 
-## 5. Future Work
-
-* **Digital Wallet:** A balance-controlled digital card system is proposed. A unique digital dining hall card will be defined for each student, and QR code generation will only be possible for users with a sufficient balance. When a QR code is created, the cost of the meal service will be automatically deducted, combining payment and access control.
-* **Unauthorized Access Detection:** By integrating sensors and thermal cameras, it will be possible to detect students who take meals without scanning a QR code at a basic level and low cost, with instant notifications sent to staff.
-* **Game Moderation:** A "report" option for drawings will be added to the game section. This will allow users to report and have drawings containing profanity, insults, or inappropriate content reviewed.
-* **Extended Operational Period:** The system is planned to be expanded to operate on a 7-day cycle instead of just 1 day. The system will automatically reset itself at the end of each day, archiving appointment and comment data from the previous day and clearing it from the active database.
