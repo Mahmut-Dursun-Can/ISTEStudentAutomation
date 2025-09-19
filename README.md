@@ -83,7 +83,7 @@ Logical relationships were established between the modules in the developed syst
 <img width="1919" height="873" alt="Screenshot_10" src="https://github.com/user-attachments/assets/33300436-c7e5-480c-9059-aae2a2c32613" />
 <img width="1919" height="874" alt="Screenshot_11" src="https://github.com/user-attachments/assets/a31263ac-9998-41c2-8c52-3473ab2ce30d" />
 <img width="1919" height="880" alt="Screenshot_12" src="https://github.com/user-attachments/assets/e45a0c4d-8a59-454f-87ed-8e622fcfbe4b" />
-<img width="1919" height="869" alt="Screenshot_13" src="https://github.com/user-attachments/assets/8d02ab72-e5a4-43df-81e8-8ef5ff6f16cf" />
+<img width="1919" height="869" alt="Screenshot_2" src="https://github.com/user-attachments/assets/13872ed8-354a-4ad0-a5ac-d1272e6c4bb5" />
 <img width="1919" height="877" alt="Screenshot_15" src="https://github.com/user-attachments/assets/98a77507-c5d1-4c44-984f-b15386831d7b" />
 <img width="1919" height="874" alt="Screenshot_16" src="https://github.com/user-attachments/assets/be7470c4-ec4d-49d0-b73a-b4080022c8f0" />
 <img width="1919" height="870" alt="Screenshot_17" src="https://github.com/user-attachments/assets/5b489179-92f0-4a49-a7fb-11d95f04d8bc" />
