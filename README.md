@@ -81,7 +81,6 @@ Logical relationships were established between the modules in the developed syst
 <img width="1919" height="868" alt="Screenshot_8" src="https://github.com/user-attachments/assets/26a44c02-7a53-4edf-ab06-841d451c2a91" />
 <img width="1919" height="870" alt="Screenshot_9" src="https://github.com/user-attachments/assets/d4c2ba13-c753-4ae6-a3c0-3fa7723ae50e" />
 <img width="1919" height="873" alt="Screenshot_10" src="https://github.com/user-attachments/assets/33300436-c7e5-480c-9059-aae2a2c32613" />
-<img width="1919" height="873" alt="Screenshot_10" src="https://github.com/user-attachments/assets/71cc4c72-7902-4b97-9c2b-6ff16c4130cb" />
 <img width="1919" height="874" alt="Screenshot_11" src="https://github.com/user-attachments/assets/a31263ac-9998-41c2-8c52-3473ab2ce30d" />
 <img width="1919" height="880" alt="Screenshot_12" src="https://github.com/user-attachments/assets/e45a0c4d-8a59-454f-87ed-8e622fcfbe4b" />
 <img width="1919" height="869" alt="Screenshot_13" src="https://github.com/user-attachments/assets/8d02ab72-e5a4-43df-81e8-8ef5ff6f16cf" />
